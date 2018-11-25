@@ -13,11 +13,13 @@ namespace Core.Services {
         }
         public List<DTO.Hashtag> Get() {
             try {
-                var hashtagList = context.Hashtags.GroupBy (x => new {
-                    x.Name
-                }).Select (x => new DTO.Hashtag {
+                var hashtagList = context.PostHastags.Include(x=> x.Hashtag).
+                GroupBy(x => new {
+                    x.Hashtag.Name
+                })
+                .Select (x => new DTO.Hashtag {
                     Name = x.Key.Name,
-                        Count = x.Count ()
+                    Count = x.Count()
                 }).ToList ();
 
                 return hashtagList;
