@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using Core.DTO;
+using DAL;
 
 namespace Core.Interface
 {
     public interface IPostService
     {
-        Post Post(Post post);
-        void Get(int afterId);    
+        DTO.Post Post(DTO.Post post);
+        List<PostHashtags> Get();  
     }
 }

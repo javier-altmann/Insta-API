@@ -4,16 +4,13 @@ using System.Linq;
 using Core.DTO;
 using Core.Interface;
 using DAL;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.Services {
     public class PostService : IPostService {
         private ApiDbContext context;
         public PostService (ApiDbContext context) {
             this.context = context;
-        }
-
-        public void Get (int afterId) {
-            throw new System.NotImplementedException ();
         }
 
         public DTO.Post Post (DTO.Post post) {
@@ -50,6 +47,15 @@ namespace Core.Services {
             } catch (Exception ex) {
                 throw new Exception ("Error al insertar el post " + ex);
             }
+        }
+
+        public List<PostHashtags> Get(DateTime created_at){
+            var postHashtagsResult = context.PostHastags
+            .Include(x=> x.Post)
+            .Include(x=> x.Hashtag).Where(x=> x.Post.CreatedAt == created_at)
+            .ToList();
+            return postHashtagsResult;
+                                
         }
     }
 }

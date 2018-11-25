@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Core.Interface;
+using DAL;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Api.Controllers
@@ -19,9 +20,10 @@ namespace Api.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<List<PostHashtags>> Get()
         {
-            return new string[] { "value1", "value2" };
+            var postHashtagsResult = post.Get();
+            return postHashtagsResult;
         }
 
         // POST api/values
