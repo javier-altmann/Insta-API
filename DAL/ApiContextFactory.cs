@@ -12,7 +12,7 @@ namespace DAL
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApiDbContext>();
             
-            var connection = "Server=localhost;User Id=root;Password=root;Database=products;port=3306";
+            var connection = "Server=localhost;User Id=root;Password=root;Database=api;port=3306";
            
             optionsBuilder.UseMySql(connection);
 

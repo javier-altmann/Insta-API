@@ -7,6 +7,15 @@ namespace DAL
         public ApiDbContext(DbContextOptions<ApiDbContext> options): base(options)
         { }
         
-        //aca van las tablas (dbset)
+        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Hashtag> Hashtags { get; set; }
+
+        public virtual DbSet<PostHashtags> PostHastags { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<PostHashtags>().HasKey(x=> new {x.PostId, x.HashtagId });
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

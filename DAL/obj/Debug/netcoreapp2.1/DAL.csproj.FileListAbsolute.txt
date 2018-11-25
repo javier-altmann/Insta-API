@@ -1,0 +1,11 @@
+/home/javier/Insta-API/DAL/bin/Debug/netcoreapp2.1/DAL.deps.json
+/home/javier/Insta-API/DAL/bin/Debug/netcoreapp2.1/DAL.runtimeconfig.json
+/home/javier/Insta-API/DAL/bin/Debug/netcoreapp2.1/DAL.runtimeconfig.dev.json
+/home/javier/Insta-API/DAL/bin/Debug/netcoreapp2.1/DAL.dll
+/home/javier/Insta-API/DAL/bin/Debug/netcoreapp2.1/DAL.pdb
+/home/javier/Insta-API/DAL/obj/Debug/netcoreapp2.1/DAL.csprojAssemblyReference.cache
+/home/javier/Insta-API/DAL/obj/Debug/netcoreapp2.1/DAL.csproj.CoreCompileInputs.cache
+/home/javier/Insta-API/DAL/obj/Debug/netcoreapp2.1/DAL.AssemblyInfoInputs.cache
+/home/javier/Insta-API/DAL/obj/Debug/netcoreapp2.1/DAL.AssemblyInfo.cs
+/home/javier/Insta-API/DAL/obj/Debug/netcoreapp2.1/DAL.dll
+/home/javier/Insta-API/DAL/obj/Debug/netcoreapp2.1/DAL.pdb

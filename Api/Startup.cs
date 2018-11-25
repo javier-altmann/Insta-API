@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Core.Interface;
+using Core.Services;
 using DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,9 +30,11 @@ namespace Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            var connection = Configuration.GetConnectionString("ApiServiceMysql");      
+            var connection = Configuration.GetConnectionString("ProductServiceMysql");      
             services.AddDbContext<ApiDbContext>(options => options.UseMySql(connection));
-            //services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IHashtagService, HashtagService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
