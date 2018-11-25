@@ -20,9 +20,9 @@ namespace Api.Controllers
 
         // GET api/values
         [HttpGet]
-        public ActionResult<List<PostHashtags>> Get()
+        public ActionResult<List<PostHashtags>> Get(DateTime created_at)
         {
-            var postHashtagsResult = post.Get();
+            var postHashtagsResult = post.Get(created_at);
             return postHashtagsResult;
         }
 
